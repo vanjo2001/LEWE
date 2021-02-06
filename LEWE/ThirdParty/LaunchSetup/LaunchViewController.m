@@ -6,8 +6,9 @@
 //
 
 #import "LaunchViewController.h"
+#import "Router.h"
 #import "ImageNames.h"
-#import "SizeConstants.h"
+#import "ScreenSizeConstants.h"
 #import "Configurator.h"
 #import "MainViewController.h"
 #import <AudioToolbox/AudioToolbox.h> 
@@ -83,14 +84,29 @@
         
     } completion:^(BOOL finished) {
         if (finished) {
-            printf("hi");
+            [self.greeting removeFromSuperview];
+            [self.circle removeFromSuperview];
+//            [self.backgroundView removeFromSuperview];
+            
             AudioServicesPlayAlertSound(1519);
-            MainViewController *vc = Configurator.setupMainViewController;
-            vc.modalPresentationStyle = UIModalPresentationFullScreen;
-            vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-            [self presentViewController:vc animated:YES completion:nil];
+            
+            UINavigationController *nav = [self setupAppStruct];
+            nav.modalPresentationStyle = UIModalPresentationFullScreen;
+            nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            
+            [self presentViewController:nav animated:YES completion:^{
+                
+            }];
         }
     }];
+}
+
+- (UINavigationController *)setupAppStruct {
+    UINavigationController *navigationController = [[UINavigationController alloc] init];
+    Configurator *configurator = [[Configurator alloc] init];
+    Router *router = [[Router alloc] initWithNavigationController:navigationController andWith:configurator];
+    [router initialViewController];
+    return navigationController;
 }
 
 - (UIImageView *)imageViewByName: (NSString *)name {

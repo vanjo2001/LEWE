@@ -6,18 +6,19 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class MainViewController;
-
-@protocol MainConfiguratorProtocol <NSObject>
-
-+ (MainViewController *)setupMainViewController;
-
-@end
+#import "MainProtocols.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Configurator: NSObject <MainConfiguratorProtocol>
+
+@protocol ConfiguratorProtocol <NSObject>
+
+- (MainViewController *)setupMainViewControllerWith: (id<MainRouterProtocol>)router;
+- (WordViewController *)setupWordViewControllerWith: (id<MainRouterProtocol>)router;
+
+@end
+
+@interface Configurator: NSObject <ConfiguratorProtocol>
 
 @end
 

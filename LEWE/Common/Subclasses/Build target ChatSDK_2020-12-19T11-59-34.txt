@@ -1,0 +1,10 @@
+
+Showing All Messages
+/Users/vanjo/Downloads/chat_ios-develop/Pods/Target Support Files/Pods-ChatSDK/Pods-ChatSDK.debug.xcconfig: unable to open file (in target "ChatSDK" in project "ChatSDK")
+
+/Users/vanjo/Downloads/chat_ios-develop/Pods/Target Support Files/Pods-ChatSDK/Pods-ChatSDK.debug.xcconfig: unable to open file (in target "ChatSDK" in project "ChatSDK")
+
+/Users/vanjo/Downloads/chat_ios-develop/Pods/Target Support Files/Pods-ChatSDK/Pods-ChatSDK.debug.xcconfig: unable to open file (in target "ChatSDK" in project "ChatSDK")
+
+/Users/vanjo/Downloads/chat_ios-develop/Pods/Target Support Files/Pods-ChatSDK/Pods-ChatSDK.debug.xcconfig: unable to open file (in target "ChatSDK" in project "ChatSDK")
+
